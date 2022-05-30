@@ -1,0 +1,11 @@
+python
+import sys
+sys.path = ['/home/nbusuario11/esp/esp-idf/tools', '/usr/lib/python310.zip', '/usr/lib/python3.10', '/usr/lib/python3.10/lib-dynload', '/home/nbusuario11/.espressif/python_env/idf5.0_py3.10_env/lib/python3.10/site-packages', '/home/nbusuario11/esp/esp-idf/tools/idf_py_actions']
+import freertos_gdb
+end
+file /home/nbusuario11/esp/practica_ESP32/pruebasConcepto/prueba1/build/prueba1.elf
+target remote :3333
+mon reset halt
+flushregs
+thb app_main
+c
