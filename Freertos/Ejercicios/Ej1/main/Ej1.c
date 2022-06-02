@@ -56,9 +56,9 @@ void app_main(void)
    xTaskCreate(
       fTask,                     // Funcion de la tarea a ejecutar
       (const char *)"fTask",     // Nombre de la tarea como String amigable para el usuario
-      configMINIMAL_STACK_SIZE*2, // Cantidad de stack de la tarea
+      configMINIMAL_STACK_SIZE*1, // Cantidad de stack de la tarea
       0,                          // Parametros de tarea
-      tskIDLE_PRIORITY+4,         // Prioridad de la tarea
+      tskIDLE_PRIORITY+1,         // Prioridad de la tarea
       0                           // Puntero a la tarea creada en el sistema
    );
 
@@ -119,7 +119,7 @@ void fTask( void* taskParmPtr )
     //ssd1306_clear_screen(&dev, false);
     //ssd1306_display_text(&dev, 1," TASK 1:*", 10, true);
     //ssd1306_display_text(&dev, 5," TASK 2: ", 10, true);
-    vTaskDelay(5000 / portTICK_PERIOD_MS);
+    vTaskDelay(3000 / portTICK_PERIOD_MS);
 	}
 
 // La tarea NUNCA debe pasar de este punto, si lo hiciera debe ser eliminada
@@ -144,7 +144,7 @@ void sTask( void* taskParmPtr )
     //ssd1306_clear_screen(&dev, false);
     //ssd1306_display_text(&dev, 1," TASK 1:*", 10, true);
     //ssd1306_display_text(&dev, 5," TASK 2: ", 10, true);
-    vTaskDelay(5000 / portTICK_PERIOD_MS);
+    vTaskDelay(3000 / portTICK_PERIOD_MS);
 	}
 
 // La tarea NUNCA debe pasar de este punto, si lo hiciera debe ser eliminada
